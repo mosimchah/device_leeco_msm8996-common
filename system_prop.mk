@@ -224,3 +224,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Fastcharge
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.le_fast_chrg_enable=1
+
+# smartcard
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.nfc.smartcard.config=SIM1,SIM2,eSE1

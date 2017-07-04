@@ -239,6 +239,8 @@ USE_CLANG_PLATFORM_BUILD := true
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/recovery/fstab.qcom
 endif
 
+PRODUCT_BOOT_JARS += org.simalliance.openmobileapi
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy

@@ -43,6 +43,8 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 #TARGET_2ND_CPU_VARIANT := kryo
 
+ENABLE_CPUSETS := true
+
 TARGET_USES_64_BIT_BINDER := true
 
 # Kernel
@@ -133,12 +135,6 @@ BOARD_USES_QCNE := true
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
-
-# CPU
-ENABLE_CPUSETS := true
-# Disable EAS until fully brought up on new kernel
-#ENABLE_SCHEDBOOST := true
-#TARGET_USES_INTERACTION_BOOST := true
 
 # Display
 MAX_VIRTUAL_DISPLAY_DIMENSION := 4096

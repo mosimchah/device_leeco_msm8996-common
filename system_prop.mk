@@ -36,7 +36,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicecall=true \
     persist.audio.fluence.voicerec=true \
     persist.audio.fluence.audiorec=false \
-    persist.audio.fluence.speaker=true \
+    persist.audio.fluence.speaker=false \
     tunnel.audio.encode=false \
     media.aac_51_output_enabled=true \
     audio.heap.size.multiplier=7 \
@@ -81,7 +81,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.HAL3.enabled=1 \
     persist.camera.imglib.fddsp=1 \
     persist.camera.llc=1 \
-    persist.camera.llnoise=1 \
+    persist.camera.llnoise=1
 
 # Display power reduction (FOSS)
 PRODUCT_PROPERTY_OVERRIDES += \

@@ -252,7 +252,7 @@ on boot
     # an ack packet comes out of order
     write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
 
-    # Set the console loglevel to < KERN_INFO
+    # Set the console loglevel to KERN_INFO
     # Set the default message loglevel to KERN_INFO
     write /proc/sys/kernel/printk "6 6 1 7"
 
@@ -314,6 +314,10 @@ on boot
     chmod 660 /sys/class/leds/red/start_idx
     chmod 660 /sys/class/leds/green/start_idx
     chmod 660 /sys/class/leds/blue/start_idx
+
+    #Quickset IR 
+    chown system system /sys/remote/enable 
+    chmod 0666 /sys/remote/enable 
 
     # Don't reset entire SoC on individual subsystem crash
     write /sys/bus/msm_subsys/devices/subsys0/restart_level "related"
@@ -508,11 +512,6 @@ on post-fs-data
     mkdir /data/misc/SelfHost/Running/ 2750 system shell
     mkdir /data/misc/SelfHost/socket/ 2770 system system
 
-    #Create PERFD deamon related dirs
-    mkdir /data/vendor/perfd 0770 root system
-    chmod 2770 /data/vendor/perfd
-    rm /data/vendor/perfd/default_values
-
     # NFC local data and nfcee xml storage
     mkdir /data/nfc 0770 nfc nfc
     mkdir /data/nfc/param 0770 nfc nfc
@@ -606,14 +605,6 @@ service qseecomd /vendor/bin/qseecomd
    class core
    user root
    group root
-   writepid /dev/cpuset/system-background/tasks
-
-service perfd /vendor/bin/perfd
-   class main
-   user root
-   group root readproc
-   disabled
-   socket perfd seqpacket 0666 root system
    writepid /dev/cpuset/system-background/tasks
 
 service thermal-engine /vendor/bin/thermal-engine

@@ -214,7 +214,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 TARGET_RELEASETOOLS_EXTENSIONS := device/qcom/common
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
+#TARGET_USERIMAGES_USE_F2FS := true
 
 ifeq ($(RECOVERY_VARIANT),twrp)
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/recovery/twrp.fstab
@@ -238,5 +238,8 @@ endif
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
+
+# Enable real time lockscreen charging current values
+BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
 
 -include vendor/leeco/msm8996-common/BoardConfigVendor.mk

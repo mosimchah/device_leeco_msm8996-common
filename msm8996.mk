@@ -22,29 +22,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk
 
-# Dalvik
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapstartsize=8m \
-    dalvik.vm.heapgrowthlimit=288m \
-    dalvik.vm.heapsize=768m \
-    dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=2m \
-    dalvik.vm.heapmaxfree=8m
-
-# HWUI
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hwui.texture_cache_size=72 \
-    ro.hwui.layer_cache_size=48 \
-    ro.hwui.r_buffer_cache_size=8 \
-    ro.hwui.path_cache_size=32 \
-    ro.hwui.gradient_cache_size=1 \
-    ro.hwui.drop_shadow_cache_size=6 \
-    ro.hwui.texture_cache_flushrate=0.4 \
-    ro.hwui.text_small_cache_width=1024 \
-    ro.hwui.text_small_cache_height=1024 \
-    ro.hwui.text_large_cache_width=2048 \
-    ro.hwui.text_large_cache_height=1024
-
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/leeco/msm8996-common/rootdir/root,root)
@@ -186,8 +163,6 @@ PRODUCT_PACKAGES += \
     libtinyxml
 
 PRODUCT_PACKAGES += \
-    vendor.display.color@1.0-service \
-    vendor.display.color@1.0-impl \
     vendor.display.config@1.0 \
     vendor.display.config@1.0_vendor
 
@@ -213,7 +188,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
-    android.hardware.drm@1.0-service.widevine
 
 # For android_filesystem_config.h
 PRODUCT_PACKAGES += \
@@ -245,12 +219,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
     $(LOCAL_PATH)/gps/etc/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
     $(LOCAL_PATH)/gps/etc/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
-
-# Healthd
-PRODUCT_PACKAGES += \
-    android.hardware.health@1.0-impl \
-    android.hardware.health@1.0-convert \
-    android.hardware.health@1.0-service
 
 # IRQ
 PRODUCT_COPY_FILES += \
@@ -365,10 +333,6 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
-
-# VNDK-SP:
-PRODUCT_PACKAGES += \
-    vndk-sp
 
 # Wifi
 PRODUCT_PACKAGES += \

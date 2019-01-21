@@ -2,3 +2,5 @@ allow sensors init:unix_stream_socket { connectto };
 
 set_prop(sensors, debug_prop)
 set_prop(sensors, diag_prop)
+allow sensors sysfs:file read;
+

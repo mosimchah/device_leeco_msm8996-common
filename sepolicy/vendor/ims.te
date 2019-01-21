@@ -1,1 +1,3 @@
 set_prop(ims, debug_prop)
+allow ims sysfs:file read;
+

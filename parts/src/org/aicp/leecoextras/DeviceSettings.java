@@ -42,6 +42,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.util.Log;
+import android.preference.Preference.OnPreferenceClickListener;
 
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -55,7 +56,6 @@ public class DeviceSettings extends PreferenceFragment implements
     final String KEY_DEVICE_DOZE_PACKAGE_NAME = "org.lineageos.settings.doze";
 
 
-    private Preference mKcalPref;
     private SwitchPreference mCameraFocusFix;
     private SwitchPreference mEnableQC;
     private SwitchPreference mBatterySave;
@@ -65,14 +65,14 @@ public class DeviceSettings extends PreferenceFragment implements
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         setPreferencesFromResource(R.xml.main, rootKey);
 
-        mKcalPref = findPreference("kcal");
-        mKcalPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                Intent intent = new Intent(getContext(), DisplayCalibration.class);
-                startActivity(intent);
-                return true;
-            }
+        PreferenceScreen mKcalPref = (PreferenceScreen) findPreference("kcal");
+        mKcalPref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+             @Override
+             public boolean onPreferenceClick(Preference preference) {
+                 Intent intent = new Intent(getApplicationContext(), DisplayCalibration.class);
+                 startActivity(intent);
+                 return true;
+             }
         });
 
         mEnableQC = (SwitchPreference) findPreference(QC_SYSTEM_PROPERTY);

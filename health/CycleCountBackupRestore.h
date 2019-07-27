@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef DEVICE_LEECO_MSM8996_HEALTH_CYCLECOUNTBACKUPRESTORE_H
-#define DEVICE_LEECO_MSM8996_HEALTH_CYCLECOUNTBACKUPRESTORE_H
+#ifndef DEVICE_LEECO_LEECO_8996_HEALTH_CYCLECOUNTBACKUPRESTORE_H
+#define DEVICE_LEECO_LEECO_8996_HEALTH_CYCLECOUNTBACKUPRESTORE_H
 
 #include <string>
 #include <android-base/file.h>
@@ -24,7 +24,7 @@
 
 namespace device {
 namespace leeco {
-namespace msm8996 {
+namespace leeco_8996 {
 namespace health {
 
 static constexpr int kBucketCount = 8;
@@ -47,8 +47,8 @@ private:
 };
 
 } // namespace health
-} // namespace msm8996
+} // namespace leeco_8996
 } // namespace leeco
 } // namespace device
 
-#endif // #ifndef DEVICE_LEECO_MSM8996_HEALTH_CYCLECOUNTBACKUPRESTORE_H
+#endif // #ifndef DEVICE_LEECO_LEECO_8996_HEALTH_CYCLECOUNTBACKUPRESTORE_H

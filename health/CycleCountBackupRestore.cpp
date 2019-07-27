@@ -18,7 +18,7 @@
 
 namespace device {
 namespace leeco {
-namespace msm8996 {
+namespace leeco_8996 {
 namespace health {
 
 static constexpr char kCycCntFile[] = "sys/class/power_supply/bms/device/cycle_counts_bins";
@@ -127,6 +127,6 @@ void CycleCountBackupRestore::UpdateAndSave()
 }
 
 } // namespace health
-} // namespace msm8996
+} // namespace leeco_8996
 } // namespace leeco
 } // namespace device
